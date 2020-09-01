@@ -1,6 +1,6 @@
 ## Construção do Ambiente OLTP
 #### Entrega dos Artefatos Fase 01
-  
+ 
   
 **Análise Geral**
 
@@ -100,7 +100,6 @@ De forma geral, seguem os requisitos de cadastro abaixo.
 | Email	     | Endereço de E-mail completo   |
 | Sexo       | Sexo do Cliente               |
 | Nascimento | Data de Nascimento do Cliente |
-
 
 
 | Cadastro | Forma de Pagamento         |
