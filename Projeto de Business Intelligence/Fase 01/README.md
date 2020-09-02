@@ -19,6 +19,12 @@ Em necessidades macro, o projeto foi dividido em 04 grandes fases:
 <img height="400" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001/Documento%20de%20Requesitos/Quatro%20Fases%20da%20Modelagem.jpg"/>
 </br>
 
+[Ambiente OLTP Criado](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001/Documento%20de%20Requesitos/Ambiente%20OLTP.jpg)
+<br>
+<img height="400" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001/Documento%20de%20Requesitos/Ambiente%20OLTP.jpg"/>
+</br>
+
+
 ### Fase 01
 
 A fase 01 compreende à modelagem relacional do negócio. O SGBD utilizado será o ***SQL Server 2017, versão Enterprise***. À UNIDADOS cabe somente a modelagem e construção do banco de dados em sua forma otimizada, ficando à cargo da Tera a sua manutenção como Backups e segurança.
