@@ -14,14 +14,14 @@ Em necessidades macro, o projeto foi dividido em 04 grandes fases:
 - Fase 03: Construção do Datawarehouse.
 - Fase 04: Ferramentas de análise de dados.
 
-[As Quatro Fases do Projeto](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001/Documento%20de%20Requesitos/Quatro%20Fases%20da%20Modelagem.jpg)
+[As Quatro Fases do Projeto](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001%20-%20Ambiente%20OLTP/Documento%20de%20Requesitos/Quatro%20Fases%20da%20Modelagem.jpg)
 <br>
-<img height="400" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001/Documento%20de%20Requesitos/Quatro%20Fases%20da%20Modelagem.jpg"/>
+<img height="400" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001%20-%20Ambiente%20OLTP/Documento%20de%20Requesitos/Quatro%20Fases%20da%20Modelagem.jpg"/>
 </br>
 
-[Ambiente OLTP Criado](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001/Documento%20de%20Requesitos/Ambiente%20OLTP.jpg)
+[Ambiente OLTP Criado](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001%20-%20Ambiente%20OLTP/Documento%20de%20Requesitos/Ambiente%20OLTP.jpg)
 <br>
-<img height="400" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001/Documento%20de%20Requesitos/Ambiente%20OLTP.jpg"/>
+<img height="400" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001%20-%20Ambiente%20OLTP/Documento%20de%20Requesitos/Ambiente%20OLTP.jpg"/>
 </br>
 
 
@@ -33,12 +33,17 @@ A fase 01 compreende à modelagem relacional do negócio. O SGBD utilizado será
 
 - **Modelagem Lógica**
 
-[Arquivo em PNG](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001/Modelagem/Modelagem%20L%C3%B3gica%20OLTP.png)
+[Arquivo em PNG](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001%20-%20Ambiente%20OLTP/Modelagem/Modelagem%20L%C3%B3gica%20OLTP.png)
 <br>
-<img height="400" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001/Modelagem/Modelagem%20L%C3%B3gica%20OLTP.png"/>
+<img height="400" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001%20-%20Ambiente%20OLTP/Modelagem/Modelagem%20L%C3%B3gica%20OLTP.png"/>
 </br>
 
 - **Modelagem Física**
+
+[Arquivo em PNG](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001%20-%20Ambiente%20OLTP/Modelagem/Modelagem%20F%C3%ADsica.jpg)
+<br>
+<img height='600' src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001%20-%20Ambiente%20OLTP/Modelagem/Modelagem%20F%C3%ADsica.jpg"/>
+<br/>
 
 [Script da Modelagem Física](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001/Scripts/01%20-%20Modelagem%20Comercio%20OLTP.sql)
 
@@ -144,9 +149,9 @@ Requisitos levantados pela equipe quanto a detalhes do modelo de negócio da Ter
 
 Abaixo segue o dicionário de constraints criadas no banco COMERCIO_OLTP
 
-[Arquivo em JPG](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001/Modelagem/Constraint.jpg)
+[Arquivo em JPG](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001%20-%20Ambiente%20OLTP/Modelagem/Constraint.jpg)
 <br>
-<img height="250" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001/Modelagem/Constraint.jpg"/>
+<img height="250" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001%20-%20Ambiente%20OLTP/Modelagem/Constraint.jpg"/>
 </br>
 
 
@@ -156,9 +161,9 @@ Abaixo segue o dicionário de constraints criadas no banco COMERCIO_OLTP
 
 **Constraints Aplicadas**
 
-[Arquivo em JPG](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001/Modelagem/Modelagem%20F%C3%ADsica.jpg)
+[Arquivo em JPG](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001%20-%20Ambiente%20OLTP/Modelagem/Constraint.jpg)
 <br>
-<img height="600" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001/Modelagem/Modelagem%20F%C3%ADsica.jpg"/>
+<img height="600" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001%20-%20Ambiente%20OLTP/Modelagem/Constraint.jpg"/>
 </br>
 
 **Perguntas a serem respondidas pelo Datawarehouse**
