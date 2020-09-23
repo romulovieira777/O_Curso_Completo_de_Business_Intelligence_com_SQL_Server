@@ -1,0 +1,1417 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/13/2020 12:22:05 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="BISERVER01"
+  DTS:CreatorName="BISERVER01\Administrator"
+  DTS:DTSID="{7CE4E490-F825-4F48-80A2-D0699D2DF35E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3008.28"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="CARGA_CLIENTE"
+  DTS:PackageType="5"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{BC619CC0-3BE4-4102-A47B-FD6692FE61BE}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\STAGE CLIENTE"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5D087A29-09A3-4CF7-B094-242E892AE2E3}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="STAGE CLIENTE"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\STAGE CLIENTE\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\STAGE CLIENTE\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\STAGE CLIENTE\Data Conversion.Inputs[Data Conversion Input].Columns[NOME COMPLETO]"
+                      cachedDataType="wstr"
+                      cachedLength="61"
+                      cachedName="NOME COMPLETO"
+                      lineageId="Package\STAGE CLIENTE\REQUESITOS MKT.Outputs[Derived Column Output].Columns[NOME COMPLETO]" />
+                    <inputColumn
+                      refId="Package\STAGE CLIENTE\Data Conversion.Inputs[Data Conversion Input].Columns[SEXO PALAVRA]"
+                      cachedDataType="wstr"
+                      cachedLength="9"
+                      cachedName="SEXO PALAVRA"
+                      lineageId="Package\STAGE CLIENTE\REQUESITOS MKT.Outputs[Derived Column Output].Columns[SEXO PALAVRA]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\STAGE CLIENTE\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\STAGE CLIENTE\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[STRING NOME COMPLETO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="61"
+                      lineageId="Package\STAGE CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[STRING NOME COMPLETO]"
+                      name="STRING NOME COMPLETO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\STAGE CLIENTE\REQUESITOS MKT.Outputs[Derived Column Output].Columns[NOME COMPLETO]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[STRING SEXO PALAVRA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="9"
+                      lineageId="Package\STAGE CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[STRING SEXO PALAVRA]"
+                      name="STRING SEXO PALAVRA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\STAGE CLIENTE\REQUESITOS MKT.Outputs[Derived Column Output].Columns[SEXO PALAVRA]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\STAGE CLIENTE\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\STAGE CLIENTE\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\STAGE CLIENTE\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\STAGE CLIENTE\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\STAGE CLIENTE\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[ENDERECO]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\STAGE CLIENTE\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{AA2AE5BA-6FD9-4F0B-A63B-9A8F282A3931}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[BISERVER01.BI_ERROR]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDCLIENTE]"
+                      cachedDataType="i4"
+                      cachedName="IDCLIENTE"
+                      externalMetadataColumnId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDCLIENTE]"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[IDCLIENTE]" />
+                    <inputColumn
+                      refId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NOME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="NOME"
+                      externalMetadataColumnId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NOME]"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[NOME]" />
+                    <inputColumn
+                      refId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SOBRENOME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="SOBRENOME"
+                      externalMetadataColumnId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOBRENOME]"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[SOBRENOME]" />
+                    <inputColumn
+                      refId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EMAIL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="60"
+                      cachedName="EMAIL"
+                      externalMetadataColumnId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EMAIL]"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[EMAIL]" />
+                    <inputColumn
+                      refId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SEXO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="SEXO"
+                      externalMetadataColumnId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SEXO]"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[SEXO]" />
+                    <inputColumn
+                      refId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NASCIMENTO]"
+                      cachedDataType="dbDate"
+                      cachedName="NASCIMENTO"
+                      externalMetadataColumnId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NASCIMENTO]"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[NASCIMENTO]" />
+                    <inputColumn
+                      refId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NOME COMPLETO]"
+                      cachedDataType="wstr"
+                      cachedLength="61"
+                      cachedName="NOME COMPLETO"
+                      externalMetadataColumnId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NOME COMPLETO]"
+                      lineageId="Package\STAGE CLIENTE\REQUESITOS MKT.Outputs[Derived Column Output].Columns[NOME COMPLETO]" />
+                    <inputColumn
+                      refId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SEXO PALAVRA]"
+                      cachedDataType="wstr"
+                      cachedLength="9"
+                      cachedName="SEXO PALAVRA"
+                      externalMetadataColumnId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SEXO PALAVRA]"
+                      lineageId="Package\STAGE CLIENTE\REQUESITOS MKT.Outputs[Derived Column Output].Columns[SEXO PALAVRA]" />
+                    <inputColumn
+                      refId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\STAGE CLIENTE\PROCURA ENDERECO.Outputs[Lookup Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\STAGE CLIENTE\PROCURA ENDERECO.Outputs[Lookup Error Output].Columns[ErrorColumn]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDCLIENTE]"
+                      dataType="i4"
+                      name="IDCLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NOME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="NOME" />
+                    <externalMetadataColumn
+                      refId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOBRENOME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="SOBRENOME" />
+                    <externalMetadataColumn
+                      refId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EMAIL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      name="EMAIL" />
+                    <externalMetadataColumn
+                      refId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SEXO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="SEXO" />
+                    <externalMetadataColumn
+                      refId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NASCIMENTO]"
+                      dataType="dbDate"
+                      name="NASCIMENTO" />
+                    <externalMetadataColumn
+                      refId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NOME COMPLETO]"
+                      dataType="wstr"
+                      length="61"
+                      name="NOME COMPLETO" />
+                    <externalMetadataColumn
+                      refId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SEXO PALAVRA]"
+                      dataType="wstr"
+                      length="9"
+                      name="SEXO PALAVRA" />
+                    <externalMetadataColumn
+                      refId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\STAGE CLIENTE\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\STAGE CLIENTE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\STAGE CLIENTE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\STAGE CLIENTE\OLTP CLIENTE"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLTP CLIENTE"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[CLIENTE]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\STAGE CLIENTE\OLTP CLIENTE.Connections[OleDbConnection]"
+                  connectionManagerID="{1C6E4BEA-66E9-407D-BBBD-5A9F41928B31}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[BISERVER01.COMERCIO_OLTP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[IDCLIENTE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].ExternalColumns[IDCLIENTE]"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[IDCLIENTE]"
+                      name="IDCLIENTE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[NOME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].ExternalColumns[NOME]"
+                      length="30"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[NOME]"
+                      name="NOME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[SOBRENOME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].ExternalColumns[SOBRENOME]"
+                      length="30"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[SOBRENOME]"
+                      name="SOBRENOME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[EMAIL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].ExternalColumns[EMAIL]"
+                      length="60"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[EMAIL]"
+                      name="EMAIL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[SEXO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].ExternalColumns[SEXO]"
+                      length="1"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[SEXO]"
+                      name="SEXO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[NASCIMENTO]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].ExternalColumns[NASCIMENTO]"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[NASCIMENTO]"
+                      name="NASCIMENTO"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].ExternalColumns[IDCLIENTE]"
+                      dataType="i4"
+                      name="IDCLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].ExternalColumns[NOME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="NOME" />
+                    <externalMetadataColumn
+                      refId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].ExternalColumns[SOBRENOME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="SOBRENOME" />
+                    <externalMetadataColumn
+                      refId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].ExternalColumns[EMAIL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      name="EMAIL" />
+                    <externalMetadataColumn
+                      refId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].ExternalColumns[SEXO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="SEXO" />
+                    <externalMetadataColumn
+                      refId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].ExternalColumns[NASCIMENTO]"
+                      dataType="dbDate"
+                      name="NASCIMENTO" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Error Output].Columns[IDCLIENTE]"
+                      dataType="i4"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Error Output].Columns[IDCLIENTE]"
+                      name="IDCLIENTE" />
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Error Output].Columns[NOME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Error Output].Columns[NOME]"
+                      name="NOME" />
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Error Output].Columns[SOBRENOME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Error Output].Columns[SOBRENOME]"
+                      name="SOBRENOME" />
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Error Output].Columns[EMAIL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Error Output].Columns[EMAIL]"
+                      name="EMAIL" />
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Error Output].Columns[SEXO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Error Output].Columns[SEXO]"
+                      name="SEXO" />
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Error Output].Columns[NASCIMENTO]"
+                      dataType="dbDate"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Error Output].Columns[NASCIMENTO]"
+                      name="NASCIMENTO" />
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\STAGE CLIENTE\PROCURA ENDERECO"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="PROCURA ENDERECO"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT CIDADE, ESTADO, REGIAO, ID_CLIENTE
+FROM ENDERECO</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT CIDADE, ESTADO, REGIAO, ID_CLIENTE
+FROM ENDERECO) [refTable]
+where [refTable].[ID_CLIENTE] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CIDADE" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ESTADO" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="REGIAO" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ID_CLIENTE" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[IDCLIENTE]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\STAGE CLIENTE\PROCURA ENDERECO.Connections[OleDbConnection]"
+                  connectionManagerID="{1C6E4BEA-66E9-407D-BBBD-5A9F41928B31}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[BISERVER01.COMERCIO_OLTP]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\STAGE CLIENTE\PROCURA ENDERECO.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\STAGE CLIENTE\PROCURA ENDERECO.Inputs[Lookup Input].Columns[IDCLIENTE]"
+                      cachedDataType="i4"
+                      cachedName="IDCLIENTE"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[IDCLIENTE]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">ID_CLIENTE</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\STAGE CLIENTE\PROCURA ENDERECO.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="RedirectRow"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\STAGE CLIENTE\PROCURA ENDERECO.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\PROCURA ENDERECO.Outputs[Lookup Match Output].Columns[REGIAO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="20"
+                      lineageId="Package\STAGE CLIENTE\PROCURA ENDERECO.Outputs[Lookup Match Output].Columns[REGIAO]"
+                      name="REGIAO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">REGIAO</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\PROCURA ENDERECO.Outputs[Lookup Match Output].Columns[ESTADO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="20"
+                      lineageId="Package\STAGE CLIENTE\PROCURA ENDERECO.Outputs[Lookup Match Output].Columns[ESTADO]"
+                      name="ESTADO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">ESTADO</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\PROCURA ENDERECO.Outputs[Lookup Match Output].Columns[CIDADE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="50"
+                      lineageId="Package\STAGE CLIENTE\PROCURA ENDERECO.Outputs[Lookup Match Output].Columns[CIDADE]"
+                      name="CIDADE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">CIDADE</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\STAGE CLIENTE\PROCURA ENDERECO.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\STAGE CLIENTE\PROCURA ENDERECO.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\STAGE CLIENTE\PROCURA ENDERECO.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\STAGE CLIENTE\PROCURA ENDERECO.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\PROCURA ENDERECO.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\STAGE CLIENTE\PROCURA ENDERECO.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\PROCURA ENDERECO.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\STAGE CLIENTE\PROCURA ENDERECO.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\STAGE CLIENTE\REQUESITOS MKT"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="REQUESITOS MKT"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\STAGE CLIENTE\REQUESITOS MKT.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\STAGE CLIENTE\REQUESITOS MKT.Inputs[Derived Column Input].Columns[NOME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="NOME"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[NOME]" />
+                    <inputColumn
+                      refId="Package\STAGE CLIENTE\REQUESITOS MKT.Inputs[Derived Column Input].Columns[SOBRENOME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="SOBRENOME"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[SOBRENOME]" />
+                    <inputColumn
+                      refId="Package\STAGE CLIENTE\REQUESITOS MKT.Inputs[Derived Column Input].Columns[SEXO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="SEXO"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[SEXO]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\STAGE CLIENTE\REQUESITOS MKT.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\STAGE CLIENTE\REQUESITOS MKT.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\REQUESITOS MKT.Outputs[Derived Column Output].Columns[NOME COMPLETO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="61"
+                      lineageId="Package\STAGE CLIENTE\REQUESITOS MKT.Outputs[Derived Column Output].Columns[NOME COMPLETO]"
+                      name="NOME COMPLETO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[NOME]} + " " + #{Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[SOBRENOME]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">NOME + " " + SOBRENOME</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\REQUESITOS MKT.Outputs[Derived Column Output].Columns[SEXO PALAVRA]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="9"
+                      lineageId="Package\STAGE CLIENTE\REQUESITOS MKT.Outputs[Derived Column Output].Columns[SEXO PALAVRA]"
+                      name="SEXO PALAVRA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">([FINDSTRING](#{Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[SEXO]},"M",1) != 0) ? "Masculino" : "Feminino"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(FINDSTRING(SEXO,"M",1) != 0) ? "Masculino" : "Feminino"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\STAGE CLIENTE\REQUESITOS MKT.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\STAGE CLIENTE\REQUESITOS MKT.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\REQUESITOS MKT.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\STAGE CLIENTE\REQUESITOS MKT.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\REQUESITOS MKT.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\STAGE CLIENTE\REQUESITOS MKT.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\STAGE CLIENTE\ST_CLIENTE"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="ST_CLIENTE"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[ST_CLIENTE]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\STAGE CLIENTE\ST_CLIENTE.Connections[OleDbConnection]"
+                  connectionManagerID="{5C2F4557-8E94-4447-94C4-7F3DABEC9A4D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[BISERVER01.COMERCIO_STAGE]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input].Columns[IDCLIENTE]"
+                      cachedDataType="i4"
+                      cachedName="IDCLIENTE"
+                      externalMetadataColumnId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input].ExternalColumns[IDCLIENTE]"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[IDCLIENTE]" />
+                    <inputColumn
+                      refId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input].Columns[EMAIL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="60"
+                      cachedName="EMAIL"
+                      externalMetadataColumnId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input].ExternalColumns[EMAIL]"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[EMAIL]" />
+                    <inputColumn
+                      refId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input].Columns[NASCIMENTO]"
+                      cachedDataType="dbDate"
+                      cachedName="NASCIMENTO"
+                      externalMetadataColumnId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input].ExternalColumns[NASCIMENTO]"
+                      lineageId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output].Columns[NASCIMENTO]" />
+                    <inputColumn
+                      refId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input].Columns[REGIAO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="REGIAO"
+                      externalMetadataColumnId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input].ExternalColumns[REGIAO]"
+                      lineageId="Package\STAGE CLIENTE\PROCURA ENDERECO.Outputs[Lookup Match Output].Columns[REGIAO]" />
+                    <inputColumn
+                      refId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input].Columns[ESTADO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="ESTADO"
+                      externalMetadataColumnId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input].ExternalColumns[ESTADO]"
+                      lineageId="Package\STAGE CLIENTE\PROCURA ENDERECO.Outputs[Lookup Match Output].Columns[ESTADO]" />
+                    <inputColumn
+                      refId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input].Columns[CIDADE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CIDADE"
+                      externalMetadataColumnId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input].ExternalColumns[CIDADE]"
+                      lineageId="Package\STAGE CLIENTE\PROCURA ENDERECO.Outputs[Lookup Match Output].Columns[CIDADE]" />
+                    <inputColumn
+                      refId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input].Columns[STRING NOME COMPLETO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="61"
+                      cachedName="STRING NOME COMPLETO"
+                      externalMetadataColumnId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input].ExternalColumns[NOME]"
+                      lineageId="Package\STAGE CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[STRING NOME COMPLETO]" />
+                    <inputColumn
+                      refId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input].Columns[STRING SEXO PALAVRA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="9"
+                      cachedName="STRING SEXO PALAVRA"
+                      externalMetadataColumnId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input].ExternalColumns[SEXO]"
+                      lineageId="Package\STAGE CLIENTE\Data Conversion.Outputs[Data Conversion Output].Columns[STRING SEXO PALAVRA]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input].ExternalColumns[IDCLIENTE]"
+                      dataType="i4"
+                      name="IDCLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input].ExternalColumns[NOME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="NOME" />
+                    <externalMetadataColumn
+                      refId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input].ExternalColumns[SEXO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="SEXO" />
+                    <externalMetadataColumn
+                      refId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input].ExternalColumns[NASCIMENTO]"
+                      dataType="dbDate"
+                      name="NASCIMENTO" />
+                    <externalMetadataColumn
+                      refId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input].ExternalColumns[CIDADE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CIDADE" />
+                    <externalMetadataColumn
+                      refId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input].ExternalColumns[ESTADO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ESTADO" />
+                    <externalMetadataColumn
+                      refId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input].ExternalColumns[REGIAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="REGIAO" />
+                    <externalMetadataColumn
+                      refId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input].ExternalColumns[EMAIL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="EMAIL" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\STAGE CLIENTE\ST_CLIENTE.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\ST_CLIENTE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\STAGE CLIENTE\ST_CLIENTE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\STAGE CLIENTE\ST_CLIENTE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\STAGE CLIENTE\ST_CLIENTE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\STAGE CLIENTE.Paths[Data Conversion Output]"
+              endId="Package\STAGE CLIENTE\ST_CLIENTE.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\STAGE CLIENTE\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\STAGE CLIENTE.Paths[Derived Column Output]"
+              endId="Package\STAGE CLIENTE\PROCURA ENDERECO.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\STAGE CLIENTE\REQUESITOS MKT.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\STAGE CLIENTE.Paths[Lookup Error Output]"
+              endId="Package\STAGE CLIENTE\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Lookup Error Output"
+              startId="Package\STAGE CLIENTE\PROCURA ENDERECO.Outputs[Lookup Error Output]" />
+            <path
+              refId="Package\STAGE CLIENTE.Paths[Lookup Match Output]"
+              endId="Package\STAGE CLIENTE\Data Conversion.Inputs[Data Conversion Input]"
+              name="Lookup Match Output"
+              startId="Package\STAGE CLIENTE\PROCURA ENDERECO.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\STAGE CLIENTE.Paths[OLE DB Source Output]"
+              endId="Package\STAGE CLIENTE\REQUESITOS MKT.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\STAGE CLIENTE\OLTP CLIENTE.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TRUNCATE ST_CLIENTE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9788A390-B6C1-4CA3-893B-28FF79C3321A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TRUNCATE ST_CLIENTE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5C2F4557-8E94-4447-94C4-7F3DABEC9A4D}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE ST_CLIENTE" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{C290D4D4-2BCD-4A06-A610-4FCDA2D33F9C}"
+      DTS:From="Package\TRUNCATE ST_CLIENTE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\STAGE CLIENTE" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="155,42"
+          Id="Package\STAGE CLIENTE"
+          TopLeft="361,107" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\TRUNCATE ST_CLIENTE"
+          TopLeft="37,104" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="230,126.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="131,0"
+              Start="0,0"
+              End="123.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="123.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\STAGE CLIENTE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="182,42"
+          Id="Package\STAGE CLIENTE\PROCURA ENDERECO"
+          TopLeft="494,77" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\STAGE CLIENTE\OLE DB Destination"
+          TopLeft="503,9" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\STAGE CLIENTE\REQUESITOS MKT"
+          TopLeft="252,79" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\STAGE CLIENTE\ST_CLIENTE"
+          TopLeft="262,181" />
+        <NodeLayout
+          Size="148,42"
+          Id="Package\STAGE CLIENTE\OLTP CLIENTE"
+          TopLeft="27,74" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\STAGE CLIENTE\Data Conversion"
+          TopLeft="507,180" />
+        <EdgeLayout
+          Id="Package\STAGE CLIENTE.Paths[OLE DB Source Output]"
+          TopLeft="175,97.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="77,0"
+              Start="0,0"
+              End="69.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="69.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGE CLIENTE.Paths[Lookup Match Output]"
+          TopLeft="585,119">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGE CLIENTE.Paths[Lookup Error Output]"
+          TopLeft="586.75,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-26"
+              Start="0,0"
+              End="0,-18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-45.86638671875,-15.0546875,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGE CLIENTE.Paths[Derived Column Output]"
+          TopLeft="418,99">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="76,0"
+              Start="0,0"
+              End="68.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="68.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGE CLIENTE.Paths[Data Conversion Output]"
+          TopLeft="507,201.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-107,0"
+              Start="0,0"
+              End="-99.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-99.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\STAGE CLIENTE\PROCURA ENDERECO">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\STAGE CLIENTE\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\STAGE CLIENTE\ST_CLIENTE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\STAGE CLIENTE\OLTP CLIENTE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
