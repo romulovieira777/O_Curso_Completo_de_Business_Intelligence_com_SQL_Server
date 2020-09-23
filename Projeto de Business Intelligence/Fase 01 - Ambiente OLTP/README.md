@@ -159,13 +159,6 @@ Abaixo segue o dicionário de constraints criadas no banco COMERCIO_OLTP
 
 [Script da Criação das Constraints](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001/Scripts/12%20-%20Habilitando%20as%20Constraints.sql)
 
-**Constraints Aplicadas**
-
-[Arquivo em JPG](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001%20-%20Ambiente%20OLTP/Modelagem/Constraint.jpg)
-<br>
-<img height="600" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001%20-%20Ambiente%20OLTP/Modelagem/Constraint.jpg"/>
-</br>
-
 **Perguntas a serem respondidas pelo Datawarehouse**
 
 -	Quem são os melhores clientes?
