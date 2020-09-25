@@ -9,10 +9,10 @@ A equipe de analistas Unidados iniciou o levantamento de requisitos em XXXXX con
 
 Em necessidades macro, o projeto foi dividido em 04 grandes fases:
 
-- Fase 01: Construção do ambiente OLTP.
-- Fase 02: Construção da área de Stage.
-- Fase 03: Construção do Datawarehouse.
-- Fase 04: Ferramentas de análise de dados.
+- [x] Fase 01: Construção do ambiente OLTP.
+- [ ] Fase 02: Construção da área de Stage.
+- [ ] Fase 03: Construção do Datawarehouse.
+- [ ] Fase 04: Ferramentas de análise de dados.
 
 [As Quatro Fases do Projeto](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001%20-%20Ambiente%20OLTP/Documento%20de%20Requesitos/Quatro%20Fases%20da%20Modelagem.jpg)
 <br>
