@@ -1,0 +1,1684 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/22/2020 5:46:34 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="BISERVER01"
+  DTS:CreatorName="BISERVER01\Administrator"
+  DTS:DTSID="{C64E61E1-95D3-4BE1-B4BB-84863E379638}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3008.28"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="CARGA_FORNECEDOR"
+  DTS:PackageType="5"
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{E7AFC77E-B287-4C96-A2D9-B6E45E84136E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\CARGA FORNECEDOR DW"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{2081AB88-2288-436F-8C31-816449634EA6}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CARGA FORNECEDOR DW">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\CARGA FORNECEDOR DW\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{7F59F458-6915-4D03-923A-DD5A864411A6}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[FIM]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[FIM]"
+                          name="FIM"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column 1"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column 1"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column 1.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[INICIO]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[INICIO]"
+                          name="INICIO"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Insert Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Insert Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[DIM_FORNECEDOR]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Insert Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{58CB21DF-A589-4F5E-B1CA-83D3280B319E}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[BISERVER01.COMERCIO_DW]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[IDFORNECEDOR]"
+                          cachedDataType="i4"
+                          cachedName="IDFORNECEDOR"
+                          externalMetadataColumnId="Package\CARGA FORNECEDOR DW\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDFORNECEDOR]"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[IDFORNECEDOR]" />
+                        <inputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[INICIO]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="INICIO"
+                          externalMetadataColumnId="Package\CARGA FORNECEDOR DW\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[INICIO]"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[INICIO]" />
+                        <inputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[NOME]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="NOME"
+                          externalMetadataColumnId="Package\CARGA FORNECEDOR DW\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[NOME]"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[NOME]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDSK]"
+                          dataType="i4"
+                          name="IDSK" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDFORNECEDOR]"
+                          dataType="i4"
+                          name="IDFORNECEDOR" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[INICIO]"
+                          dataType="dbTimeStamp"
+                          name="INICIO" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[FIM]"
+                          dataType="dbTimeStamp"
+                          name="FIM" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[NOME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="NOME" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\CARGA FORNECEDOR DW\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\CARGA FORNECEDOR DW\Data Flow Task\OLE DB Command"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="OLE DB Command"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DIM_FORNECEDOR] SET [FIM] = ? WHERE [IDFORNECEDOR] = ? AND [FIM] IS NULL</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\OLE DB Command.Connections[OleDbConnection]"
+                      connectionManagerID="{58CB21DF-A589-4F5E-B1CA-83D3280B319E}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[BISERVER01.COMERCIO_DW]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[IDFORNECEDOR]"
+                          cachedDataType="i4"
+                          cachedName="IDFORNECEDOR"
+                          externalMetadataColumnId="Package\CARGA FORNECEDOR DW\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Output].Columns[IDFORNECEDOR]" />
+                        <inputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[FIM]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="FIM"
+                          externalMetadataColumnId="Package\CARGA FORNECEDOR DW\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[FIM]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          dataType="dbTimeStamp"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          dataType="i4"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\CARGA FORNECEDOR DW\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\CARGA FORNECEDOR DW\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension"
+                  componentClassID="Microsoft.SCD"
+                  contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+                  description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+                  name="Slowly Changing Dimension"
+                  version="3">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SELECT statement used to create a schema rowset."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [IDFORNECEDOR], [NOME],[INICIO],[FIM] FROM [dbo].[DIM_FORNECEDOR]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                      name="CurrentRowWhere">[INICIO] IS NOT NULL AND [FIM] IS NULL</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                      name="UpdateChangingAttributeHistory">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                      name="FailOnFixedAttributeChange">true</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the column name for the inferred member."
+                      name="InferredMemberIndicator"></property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether inferred member updates are detected."
+                      name="EnableInferredMember">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                      name="FailOnLookupFailure">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies that all rows in the input are new or the transformation detects the change type."
+                      name="IncomingRowChangeType"
+                      typeConverter="IncomingRowChangeType">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension.Connections[LookupConnection]"
+                      connectionManagerID="{58CB21DF-A589-4F5E-B1CA-83D3280B319E}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[BISERVER01.COMERCIO_DW]"
+                      description="Defines the connection to use for lookups in the dimension table"
+                      name="LookupConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                      name="Slowly Changing Dimension Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[IDFORNECEDOR]"
+                          cachedDataType="i4"
+                          cachedName="IDFORNECEDOR"
+                          externalMetadataColumnId="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[IDFORNECEDOR]"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Output].Columns[IDFORNECEDOR]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[NOME]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="NOME"
+                          externalMetadataColumnId="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[NOME]"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Output].Columns[NOME]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">3</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[IDFORNECEDOR]"
+                          dataType="i4"
+                          name="IDFORNECEDOR" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[NOME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="NOME" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[INICIO]"
+                          dataType="dbTimeStamp"
+                          name="INICIO" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[FIM]"
+                          dataType="dbTimeStamp"
+                          name="FIM" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                      description="Unchanged rows"
+                      exclusionGroup="1"
+                      name="Unchanged Output"
+                      synchronousInputId="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension.Outputs[New Output]"
+                      description="New rows"
+                      exclusionGroup="1"
+                      name="New Output"
+                      synchronousInputId="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                      description="Rows with changes in columns tagged FixedAttribute"
+                      exclusionGroup="1"
+                      name="Fixed Attribute Output"
+                      synchronousInputId="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                      description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                      exclusionGroup="1"
+                      name="Changing Attribute Updates Output"
+                      synchronousInputId="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                      description="HistoricalAttribute (Type 2) changes result in these new rows"
+                      exclusionGroup="2"
+                      name="Historical Attribute Inserts Output"
+                      synchronousInputId="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                      description="Information to update unpopulated initial dimension row"
+                      exclusionGroup="1"
+                      name="Inferred Member Updates Output"
+                      synchronousInputId="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="TABELA STAGE FORNECEDOR"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    [IDFORNECEDOR]
+   ,[NOME]
+FROM 
+    [COMERCIO_STAGE].[dbo].[ST_FORNECEDOR]</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Connections[OleDbConnection]"
+                      connectionManagerID="{5C2F4557-8E94-4447-94C4-7F3DABEC9A4D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[BISERVER01.COMERCIO_STAGE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Output].Columns[IDFORNECEDOR]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Output].ExternalColumns[IDFORNECEDOR]"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Output].Columns[IDFORNECEDOR]"
+                          name="IDFORNECEDOR"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Output].Columns[NOME]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Output].ExternalColumns[NOME]"
+                          length="100"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Output].Columns[NOME]"
+                          name="NOME"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Output].ExternalColumns[IDFORNECEDOR]"
+                          dataType="i4"
+                          name="IDFORNECEDOR" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Output].ExternalColumns[NOME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NOME" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Error Output].Columns[IDFORNECEDOR]"
+                          dataType="i4"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Error Output].Columns[IDFORNECEDOR]"
+                          name="IDFORNECEDOR" />
+                        <outputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Error Output].Columns[NOME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Error Output].Columns[NOME]"
+                          name="NOME" />
+                        <outputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Union All"
+                  componentClassID="Microsoft.UnionAll"
+                  contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+                  name="Union All"
+                  version="1">
+                  <inputs>
+                    <input
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Union All.Inputs[Union All Input 1]"
+                      name="Union All Input 1">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[IDFORNECEDOR]"
+                          cachedDataType="i4"
+                          cachedName="IDFORNECEDOR"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Output].Columns[IDFORNECEDOR]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\CARGA FORNECEDOR DW\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[IDFORNECEDOR]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[NOME]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="NOME"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Output].Columns[NOME]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\CARGA FORNECEDOR DW\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[NOME]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Union All.Inputs[Union All Input 2]"
+                      hasSideEffects="true"
+                      name="Union All Input 2">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[IDFORNECEDOR]"
+                          cachedDataType="i4"
+                          cachedName="IDFORNECEDOR"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Output].Columns[IDFORNECEDOR]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\CARGA FORNECEDOR DW\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[IDFORNECEDOR]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[NOME]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="NOME"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Output].Columns[NOME]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\CARGA FORNECEDOR DW\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[NOME]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Union All.Inputs[Union All Input 3]"
+                      dangling="true"
+                      hasSideEffects="true"
+                      name="Union All Input 3">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Union All.Outputs[Union All Output 1]"
+                      name="Union All Output 1">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[IDFORNECEDOR]"
+                          dataType="i4"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[IDFORNECEDOR]"
+                          name="IDFORNECEDOR" />
+                        <outputColumn
+                          refId="Package\CARGA FORNECEDOR DW\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[NOME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\CARGA FORNECEDOR DW\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[NOME]"
+                          name="NOME" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\CARGA FORNECEDOR DW\Data Flow Task.Paths[Derived Column Output]"
+                  endId="Package\CARGA FORNECEDOR DW\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]"
+                  name="Derived Column Output"
+                  startId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\CARGA FORNECEDOR DW\Data Flow Task.Paths[Derived Column Output1]"
+                  endId="Package\CARGA FORNECEDOR DW\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column 1.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\CARGA FORNECEDOR DW\Data Flow Task.Paths[Historical Attribute Inserts Output]"
+                  endId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  name="Historical Attribute Inserts Output"
+                  startId="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]" />
+                <path
+                  refId="Package\CARGA FORNECEDOR DW\Data Flow Task.Paths[New Output]"
+                  endId="Package\CARGA FORNECEDOR DW\Data Flow Task\Union All.Inputs[Union All Input 1]"
+                  name="New Output"
+                  startId="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension.Outputs[New Output]" />
+                <path
+                  refId="Package\CARGA FORNECEDOR DW\Data Flow Task.Paths[OLE DB Command Output]"
+                  endId="Package\CARGA FORNECEDOR DW\Data Flow Task\Union All.Inputs[Union All Input 2]"
+                  name="OLE DB Command Output"
+                  startId="Package\CARGA FORNECEDOR DW\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Output]" />
+                <path
+                  refId="Package\CARGA FORNECEDOR DW\Data Flow Task.Paths[OLE DB Source Output]"
+                  endId="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\CARGA FORNECEDOR DW\Data Flow Task.Paths[Union All Output 1]"
+                  endId="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]"
+                  name="Union All Output 1"
+                  startId="Package\CARGA FORNECEDOR DW\Data Flow Task\Union All.Outputs[Union All Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CARGA FORNECEDOR STAGE"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{30C93084-8D4A-47DC-8610-BDEAF17BB881}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CARGA FORNECEDOR STAGE">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{5B0C5CDE-2DC4-46D4-A1E3-CC9C0D0BDEF5}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ST_FORNECEDOR"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\OLTP FORNECEDOR"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLTP FORNECEDOR"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT IDFORNECEDOR, NOME
+FROM FORNECEDOR</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\OLTP FORNECEDOR.Connections[OleDbConnection]"
+                      connectionManagerID="{1C6E4BEA-66E9-407D-BBBD-5A9F41928B31}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[BISERVER01.COMERCIO_OLTP]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\OLTP FORNECEDOR.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\OLTP FORNECEDOR.Outputs[OLE DB Source Output].Columns[IDFORNECEDOR]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\OLTP FORNECEDOR.Outputs[OLE DB Source Output].ExternalColumns[IDFORNECEDOR]"
+                          lineageId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\OLTP FORNECEDOR.Outputs[OLE DB Source Output].Columns[IDFORNECEDOR]"
+                          name="IDFORNECEDOR"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\OLTP FORNECEDOR.Outputs[OLE DB Source Output].Columns[NOME]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\OLTP FORNECEDOR.Outputs[OLE DB Source Output].ExternalColumns[NOME]"
+                          length="50"
+                          lineageId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\OLTP FORNECEDOR.Outputs[OLE DB Source Output].Columns[NOME]"
+                          name="NOME"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\OLTP FORNECEDOR.Outputs[OLE DB Source Output].ExternalColumns[IDFORNECEDOR]"
+                          dataType="i4"
+                          name="IDFORNECEDOR" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\OLTP FORNECEDOR.Outputs[OLE DB Source Output].ExternalColumns[NOME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="NOME" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\OLTP FORNECEDOR.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\OLTP FORNECEDOR.Outputs[OLE DB Source Error Output].Columns[IDFORNECEDOR]"
+                          dataType="i4"
+                          lineageId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\OLTP FORNECEDOR.Outputs[OLE DB Source Error Output].Columns[IDFORNECEDOR]"
+                          name="IDFORNECEDOR" />
+                        <outputColumn
+                          refId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\OLTP FORNECEDOR.Outputs[OLE DB Source Error Output].Columns[NOME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\OLTP FORNECEDOR.Outputs[OLE DB Source Error Output].Columns[NOME]"
+                          name="NOME" />
+                        <outputColumn
+                          refId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\OLTP FORNECEDOR.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\OLTP FORNECEDOR.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\OLTP FORNECEDOR.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\OLTP FORNECEDOR.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\ST_FORNECEDOR"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="ST_FORNECEDOR"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[ST_FORNECEDOR]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\ST_FORNECEDOR.Connections[OleDbConnection]"
+                      connectionManagerID="{5C2F4557-8E94-4447-94C4-7F3DABEC9A4D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[BISERVER01.COMERCIO_STAGE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\ST_FORNECEDOR.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\ST_FORNECEDOR.Inputs[OLE DB Destination Input].Columns[IDFORNECEDOR]"
+                          cachedDataType="i4"
+                          cachedName="IDFORNECEDOR"
+                          externalMetadataColumnId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\ST_FORNECEDOR.Inputs[OLE DB Destination Input].ExternalColumns[IDFORNECEDOR]"
+                          lineageId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\OLTP FORNECEDOR.Outputs[OLE DB Source Output].Columns[IDFORNECEDOR]" />
+                        <inputColumn
+                          refId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\ST_FORNECEDOR.Inputs[OLE DB Destination Input].Columns[NOME]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="NOME"
+                          externalMetadataColumnId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\ST_FORNECEDOR.Inputs[OLE DB Destination Input].ExternalColumns[NOME]"
+                          lineageId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\OLTP FORNECEDOR.Outputs[OLE DB Source Output].Columns[NOME]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\ST_FORNECEDOR.Inputs[OLE DB Destination Input].ExternalColumns[IDFORNECEDOR]"
+                          dataType="i4"
+                          name="IDFORNECEDOR" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\ST_FORNECEDOR.Inputs[OLE DB Destination Input].ExternalColumns[NOME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NOME" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\ST_FORNECEDOR.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\ST_FORNECEDOR.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\ST_FORNECEDOR.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\ST_FORNECEDOR.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\ST_FORNECEDOR.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\ST_FORNECEDOR.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR.Paths[OLE DB Source Output]"
+                  endId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\ST_FORNECEDOR.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\OLTP FORNECEDOR.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CARGA FORNECEDOR STAGE\TRUNCATE ST_FORNECEDOR"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{6C23F131-F719-4A7A-B2D8-97239BBA96DD}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRUNCATE ST_FORNECEDOR"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5C2F4557-8E94-4447-94C4-7F3DABEC9A4D}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE ST_FORNECEDOR" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\CARGA FORNECEDOR STAGE.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{857CD6C8-7BB3-4DFE-BDCE-8F5970671C67}"
+          DTS:From="Package\CARGA FORNECEDOR STAGE\TRUNCATE ST_FORNECEDOR"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{1915982E-47B7-4E0B-9311-8702E61C79E0}"
+      DTS:From="Package\CARGA FORNECEDOR STAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\CARGA FORNECEDOR DW" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\CARGA FORNECEDOR DW\Data Flow Task"
+          TopLeft="33,36" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="226,154"
+          Size="226,197"
+          Id="Package\CARGA FORNECEDOR DW"
+          TopLeft="390,69" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR"
+          TopLeft="31.5,119" />
+        <NodeLayout
+          Size="219,42"
+          Id="Package\CARGA FORNECEDOR STAGE\TRUNCATE ST_FORNECEDOR"
+          TopLeft="9.5,9" />
+        <EdgeLayout
+          Id="Package\CARGA FORNECEDOR STAGE.PrecedenceConstraints[Constraint]"
+          TopLeft="116.25,51">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,68"
+              Start="0,0"
+              End="0,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="240,216"
+          Size="240,259"
+          Id="Package\CARGA FORNECEDOR STAGE"
+          TopLeft="26,41" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="266,169">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="124,0"
+              Start="0,0"
+              End="116.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="116.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\CARGA FORNECEDOR DW\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="121,42"
+          Id="Package\CARGA FORNECEDOR DW\Data Flow Task\Union All"
+          TopLeft="209.416666666667,291.5" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension"
+          TopLeft="340.666666666667,21.8333333333333" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\CARGA FORNECEDOR DW\Data Flow Task\OLE DB Command"
+          TopLeft="70.9166666666668,189.833333333333" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column 1"
+          TopLeft="183.333333333333,411.083333333333" />
+        <NodeLayout
+          Size="221,42"
+          Id="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR"
+          TopLeft="32,16.8333333333333" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\CARGA FORNECEDOR DW\Data Flow Task\Insert Destination"
+          TopLeft="177.083333333333,509" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\CARGA FORNECEDOR DW\Data Flow Task\Derived Column"
+          TopLeft="59.1666666666667,104.166666666667" />
+        <EdgeLayout
+          Id="Package\CARGA FORNECEDOR DW\Data Flow Task.Paths[Union All Output 1]"
+          TopLeft="269.916666666667,333.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-30.9166666666667,77.5833333333334"
+              Start="0,0"
+              End="-30.9166666666667,70.0833333333334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.0975091130012" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.0975091130012"
+                    Point2="0,46.0975091130012"
+                    Point3="-4,46.0975091130012" />
+                  <mssgle:LineSegment
+                    End="-26.9166666666667,46.0975091130012" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-26.9166666666667,46.0975091130012"
+                    Point2="-30.9166666666667,46.0975091130012"
+                    Point3="-30.9166666666667,50.0975091130012" />
+                  <mssgle:LineSegment
+                    End="-30.9166666666667,70.0833333333334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CARGA FORNECEDOR DW\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="253,40.3333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="87.6666666666667,0"
+              Start="0,0"
+              End="80.1666666666667,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="80.1666666666667,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CARGA FORNECEDOR DW\Data Flow Task.Paths[OLE DB Command Output]"
+          TopLeft="153.916666666667,231.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="87.7499999999998,59.6666666666667"
+              Start="0,0"
+              End="87.7499999999998,52.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.9200359389039" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.9200359389039"
+                    Point2="0,38.9200359389039"
+                    Point3="4,38.9200359389039" />
+                  <mssgle:LineSegment
+                    End="83.7499999999998,38.9200359389039" />
+                  <mssgle:CubicBezierSegment
+                    Point1="83.7499999999998,38.9200359389039"
+                    Point2="87.7499999999998,38.9200359389039"
+                    Point3="87.7499999999998,42.9200359389039" />
+                  <mssgle:LineSegment
+                    End="87.7499999999998,52.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CARGA FORNECEDOR DW\Data Flow Task.Paths[New Output]"
+          TopLeft="478.666666666667,63.8333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-208.75,227.666666666667"
+              Start="0,0"
+              End="-208.75,220.166666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,88.1044634377968" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,88.1044634377968"
+                    Point2="0,92.1044634377968"
+                    Point3="-4,92.1044634377968" />
+                  <mssgle:LineSegment
+                    End="-204.75,92.1044634377968" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-204.75,92.1044634377968"
+                    Point2="-208.75,92.1044634377968"
+                    Point3="-208.75,96.1044634377968" />
+                  <mssgle:LineSegment
+                    End="-208.75,220.166666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-131.46638671875,97.1044634377968,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CARGA FORNECEDOR DW\Data Flow Task.Paths[Historical Attribute Inserts Output]"
+          TopLeft="411.666666666667,63.8333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-299.833333333333,40.3333333333333"
+              Start="0,0"
+              End="-299.833333333333,32.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.0992647058824" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.0992647058824"
+                    Point2="0,20.0992647058824"
+                    Point3="-4,20.0992647058824" />
+                  <mssgle:LineSegment
+                    End="-295.833333333333,20.0992647058824" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-295.833333333333,20.0992647058824"
+                    Point2="-299.833333333333,20.0992647058824"
+                    Point3="-299.833333333333,24.0992647058824" />
+                  <mssgle:LineSegment
+                    End="-299.833333333333,32.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-224.973053385417,25.0992647058824,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CARGA FORNECEDOR DW\Data Flow Task.Paths[Derived Column Output1]"
+          TopLeft="261.708333333333,453.083333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.9166666666666"
+              Start="0,0"
+              End="0,48.4166666666666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.4166666666666" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CARGA FORNECEDOR DW\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="136.166666666667,146.166666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-8.5833333333332,43.6666666666666"
+              Start="0,0"
+              End="-8.5833333333332,36.1666666666666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.9498806682577" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.9498806682577"
+                    Point2="0,25.9498806682577"
+                    Point3="-4,25.9498806682577" />
+                  <mssgle:LineSegment
+                    End="-4.5833333333332,25.9498806682577" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4.5833333333332,25.9498806682577"
+                    Point2="-8.5833333333332,25.9498806682577"
+                    Point3="-8.5833333333332,29.9498806682577" />
+                  <mssgle:LineSegment
+                    End="-8.5833333333332,36.1666666666666" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA FORNECEDOR DW\Data Flow Task\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{58CB21DF-A589-4F5E-B1CA-83D3280B319E}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[DIM_FORNECEDOR]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Output].Columns[IDFORNECEDOR]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;IDFORNECEDOR&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;TABELA STAGE FORNECEDOR.Outputs[OLE DB Source Output].Columns[NOME]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;NOME&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn&gt;INICIO&lt;/StartDateColumn&gt;
+  &lt;EndDateColumn&gt;FIM&lt;/EndDateColumn&gt;
+  &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA FORNECEDOR DW\Data Flow Task\TABELA STAGE FORNECEDOR">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="164,42"
+          Id="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\ST_FORNECEDOR"
+          TopLeft="380,72" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\OLTP FORNECEDOR"
+          TopLeft="48,65" />
+        <EdgeLayout
+          Id="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR.Paths[OLE DB Source Output]"
+          TopLeft="222,89.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="158,0"
+              Start="0,0"
+              End="150.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="150.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\OLTP FORNECEDOR">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA FORNECEDOR STAGE\ST_FORNECEDOR\ST_FORNECEDOR">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
