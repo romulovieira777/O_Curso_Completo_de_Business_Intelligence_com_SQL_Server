@@ -117,42 +117,47 @@ Segue abaixo a criação no SSAS (SQL Server Analysis Services):
 
 [**Arquivo em JPG**](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/tree/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analyis%20Services/Modelagem)
 
-[**BASE DE DADOS**](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analyis%20Services/Modelagem/BASE_DADOS.jpg)
+[**BASE DE DADOS**](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analysis%20Services/Modelagem/BASE_DADOS.jpg)
 <br>
-<img height="550" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analyis%20Services/Modelagem/BASE_DADOS.jpg"/>
+<img height="550" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analysis%20Services/Modelagem/BASE_DADOS.jpg"/>
 </br>
 
-[**CUBO**](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analyis%20Services/Modelagem/CUBO.jpg)
+[**CUBO**](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analysis%20Services/Modelagem/CUBO.jpg)
 <br>
-<img height="550" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analyis%20Services/Modelagem/CUBO.jpg"/>
+<img height="550" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analysis%20Services/Modelagem/CUBO.jpg"/>
 </br>
 
-[**DIM VENDEDOR**](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analyis%20Services/Modelagem/DIM_CLIENTE.jpg)
+[**DIM CLIENTE**](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analysis%20Services/Modelagem/DIM_CLIENTE.jpg)
 <br>
-<img height="550" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analyis%20Services/Modelagem/DIM_CLIENTE.jpg"/>
+<img height="550" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analysis%20Services/Modelagem/DIM_CLIENTE.jpg"/>
 </br>
 
-[**DIM FORMA**](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analyis%20Services/Modelagem/DIM_FORMA.jpg)
+[**DIM VENDEDOR**](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analysis%20Services/Modelagem/DIM_VENDEDOR.jpg)
 <br>
-<img height="550" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analyis%20Services/Modelagem/DIM_FORMA.jpg"/>
+<img height="550" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analysis%20Services/Modelagem/DIM_VENDEDOR.jpg"/>
 </br>
 
-[**DIM FORNECEDOR**](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analyis%20Services/Modelagem/DIM_FORNECEDOR.jpg)
+[**DIM FORMA**](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analysis%20Services/Modelagem/DIM_FORMA.jpg)
 <br>
-<img height="550" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analyis%20Services/Modelagem/DIM_FORNECEDOR.jpg"/>
+<img height="550" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analysis%20Services/Modelagem/DIM_FORMA.jpg"/>
 </br>
 
-[**DIM NOTA**](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analyis%20Services/Modelagem/DIM_NOTA.jpg)
+[**DIM FORNECEDOR**](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analysis%20Services/Modelagem/DIM_FORNECEDOR.jpg)
 <br>
-<img height="550" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analyis%20Services/Modelagem/DIM_NOTA.jpg"/>
+<img height="550" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analysis%20Services/Modelagem/DIM_FORNECEDOR.jpg"/>
 </br>
 
-[**DIM PRODUTO**](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analyis%20Services/Modelagem/DIM_PRODUTO.jpg)
+[**DIM NOTA**](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analysis%20Services/Modelagem/DIM_NOTA.jpg)
 <br>
-<img height="550" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analyis%20Services/Modelagem/DIM_PRODUTO.jpg"/>
+<img height="550" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analysis%20Services/Modelagem/DIM_NOTA.jpg"/>
 </br>
 
-[**DIM TEMPO**](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analyis%20Services/Modelagem/DIM_TEMPO.jpg)
+[**DIM PRODUTO**](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analysis%20Services/Modelagem/DIM_PRODUTO.jpg)
 <br>
-<img height="550" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analyis%20Services/Modelagem/DIM_TEMPO.jpg"/>
+<img height="550" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analysis%20Services/Modelagem/DIM_PRODUTO.jpg"/>
+</br>
+
+[**DIM TEMPO**](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analysis%20Services/Modelagem/DIM_TEMPO.jpg)
+<br>
+<img height="550" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2004%20-%20Analysis%20Services/Modelagem/DIM_TEMPO.jpg"/>
 </br>
