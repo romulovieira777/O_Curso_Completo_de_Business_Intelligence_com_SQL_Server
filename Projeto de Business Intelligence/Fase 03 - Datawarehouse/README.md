@@ -1,12 +1,12 @@
-## Construção do DataWarehouse
+## Construção do Data Warehouse
 #### Entrega dos Artefatos Fase 03
 
 Em necessidades macro, o projeto foi dividido em 04 grandes fases:
 
-- [x] Fase 01: Construção do ambiente OLTP.
-- [x] Fase 02: Construção da área de Stage.
-- [x] Fase 03: Construção do Datawarehouse.
-- [ ] Fase 04: Ferramentas de análise de dados.
+- [x] Fase 01: Construção do Ambiente OLTP.
+- [x] Fase 02: Construção da Área de Stage.
+- [x] Fase 03: Construção do Data Warehouse.
+- [ ] Fase 04: Ferramentas de Análise de Dados.
 
 [As Quatro Fases do Projeto](https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2001%20-%20Ambiente%20OLTP/Documento%20de%20Requesitos/Quatro%20Fases%20da%20Modelagem.jpg)
 <br>
@@ -29,7 +29,7 @@ Foi feita a extração dos dados e o carregamento das informações (ETL) para o
 <img height="200" src="https://github.com/romulovieira777/Business_Intelligence_SQL_Server/blob/master/Projeto%20de%20Business%20Intelligence/Fase%2002%20-%20%C3%81rea%20de%20Stage/Modelagem/As%20Tr%C3%AAs%20Fases%20do%20Projeto.jpg"/>
 </br>
 
-As tabelas carregadas no DataWarehouse são elas:
+As tabelas carregadas no Data Warehouse são elas:
 
 **Tabela DIM_CLIENTE**
 | Identificação | Descrição                       |
