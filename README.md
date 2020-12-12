@@ -146,3 +146,5 @@ No dia xx/xx/xxxx a gerente de MKT, Maria de xxxx, solicitou ao analista xxxx a 
 Coluna com nome único.
 Sexo – Masculino e Feminino.
 Produtos em padrão Camel Case.
+
+Link para o curso: https://www.udemy.com/course/curso-completo-business-intelligence/
