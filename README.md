@@ -147,4 +147,4 @@ Coluna com nome único.
 Sexo – Masculino e Feminino.
 Produtos em padrão Camel Case.
 
-Link para o curso: https://www.udemy.com/course/curso-completo-business-intelligence/
+Link para o curso: [Udemy](https://www.udemy.com/course/curso-completo-business-intelligence/)
