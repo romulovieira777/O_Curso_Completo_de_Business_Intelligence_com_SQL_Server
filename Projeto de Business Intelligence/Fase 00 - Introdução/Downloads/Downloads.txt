@@ -1,0 +1,41 @@
+01 - Windows Server 2016 - ok
+01.1 - Alterar nome do Server * ok
+02 - Java - ok
+03 - SQL Server 2017 - ok
+04 - Management Studio - ok
+04.1 - Configuração do Reporting Services - ok
+05 - Data Tools para VS Studio 2017 - ok
+06 - Star UML (Modelagem) - ok
+07 - Winrar
+08 - Word e Excel
+09 - Adobe Reader
+
+Downloads Oficiais
+
+http://staruml.io/download
+
+https://www.microsoft.com/pt-br/sql-server/sql-server-downloads
+
+https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017
+
+https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-2017
+
+https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016
+
+https://www.virtualbox.org/wiki/Downloads
+
+http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
+
+https://www.win-rar.com/download.html?&L=0
+
+https://get.adobe.com/reader/
+
+-------------------------------------------------------------------------------------
+SENHA SERVER
+
+User: Administrator
+@1q2w3e4r
+
+-----------------------------------------------------------------
+Link servidor privado
+https://drive.google.com/open?id=12f76GA68OGCJpwohjDoQgu0VSpMDnmzV
