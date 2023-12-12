@@ -3,7 +3,7 @@
 02 - Java - ok
 03 - SQL Server 2017 - ok
 04 - Management Studio - ok
-04.1 - Configuração do Reporting Services - ok
+04.1 - ConfiguraÃ§Ã£o do Reporting Services - ok
 05 - Data Tools para VS Studio 2017 - ok
 06 - Star UML (Modelagem) - ok
 07 - Winrar
@@ -36,6 +36,6 @@ SENHA SERVER
 User: Administrator
 @1q2w3e4r
 
------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 Link servidor privado
 https://drive.google.com/open?id=12f76GA68OGCJpwohjDoQgu0VSpMDnmzV
